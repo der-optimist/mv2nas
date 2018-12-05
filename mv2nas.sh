@@ -50,6 +50,12 @@ rsync --progress --remove-source-files *'Polizeiruf'* /home/user1/smb/Intenso/TV
 echo 'Soko Leipzig'
 rsync --progress --remove-source-files *ZDF*'SOKO Leipzig'* /home/user1/smb/Intenso/TVSendungen/45_-_Soko_Leipzig 2>/dev/null
 #
+echo 'Soko Koeln'
+rsync --progress --remove-source-files *ZDF*'SOKO K'?ln* /home/user1/smb/Intenso/TVSendungen/45_-_Soko_Koeln 2>/dev/null
+#
+echo 'Soko Stuttgart'
+rsync --progress --remove-source-files *ZDF*'SOKO Stuttgart'* /home/user1/smb/Intenso/TVSendungen/45_-_Soko_Stuttgart 2>/dev/null
+#
 echo 'Sonstige SOKOs'
 rsync --progress --remove-source-files *ZDF*SOKO* /home/user1/smb/Intenso/TVSendungen/45_-_Sonstige_Sokos 2>/dev/null
 #
