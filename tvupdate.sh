@@ -246,7 +246,7 @@ sleep 10
 echo '--- Melde Plattenplatz aufs Handy ---'
 msg2=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
 msg3=$(df -h | awk '{if (match($1,/(Intenso)/)) {print "NAS " $4}}')
-msg=$(echo “$msg2 - $msg3“) && curl "https://api.simplepush.io/send/9FU4rS/fertig/$msg" 
+msg=$(echo “$msg2 - $msg3“) && curl "https://api.simplepush.io/send/yourid/fertig/$msg" 
 #
 echo '--- Fertig ---'
 date
