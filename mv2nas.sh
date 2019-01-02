@@ -1,4 +1,6 @@
 #!/bin/bash
+# move downloaded files to specific folders on the NAS
+# and rename them
 #
 # --- Input ---
 #
