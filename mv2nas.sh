@@ -3,7 +3,7 @@
 # --- Input ---
 #
 dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
-dir_nas_media_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5'
+dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5'
 dir_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv'
 #
 # -------------
