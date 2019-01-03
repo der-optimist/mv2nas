@@ -61,7 +61,7 @@ rsync --progress --remove-source-files *'Polizeiruf'* ${dir_nas_media}/TVSendung
 echo 'Soko Leipzig'
 rsync --progress --remove-source-files *ZDF*'SOKO Leipzig'* ${dir_nas_media}/TVSendungen/45_-_Soko_Leipzig 2>/dev/null
 #
-echo 'Soko Koeln'
+echo 'Soko Köln'
 rsync --progress --remove-source-files *ZDF*'SOKO Köln'* ${dir_nas_media}/TVSendungen/45_-_Soko_Köln 2>/dev/null
 #
 echo 'Soko Stuttgart'
@@ -166,6 +166,7 @@ cd ${dir_nas_media}/TVSendungen_Kinder
 rename 's/_ZDF_/ - /' *
 rename 's/_ard_/ - /' *
 rename 's/_ZDFneo_ZDFneo/ - /' *
+rename 's/_ZDFneo_/ - /' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 #
 cd ${dir_tvu_script}
