@@ -44,20 +44,20 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
   sekint=${sek%.*}
   min=$(( $sekint /60 ))
-  vorschau=$(echo "${datei%.*}" | tr -cd '[:alnum:]')
+  vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
   echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
-  if test -e "${dir_website_temp}"/tvvorschaualt/"${vorschau}".jpg; then
-    mv "${dir_website_temp}/tvvorschaualt/${vorschau}".jpg "${dir_website_temp}/tvvorschau/${vorschau}".jpg
-    mv "${dir_website_temp}/tvvorschaualt/${vorschau}".html "${dir_website_temp}/tvvorschau/${vorschau}".html
+  if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
+    mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
+    mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
   else
     # jpg Vorschau
     for prozent in {07..84..7}
     do
       ffmpegthumbnailer -i "$datei" -s 0 -t ${prozent}% -o ${dir_website_temp}/tvvorschau/temp${prozent}.jpg
     done
-    rm "$(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    rm "$(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 "${dir_website_temp}/tvvorschau/temp??.jpg" "${dir_website_temp}/tvvorschau/${vorschau}.jpg"
+    rm $(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    rm $(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 ${dir_website_temp}/tvvorschau/temp??.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     rm ${dir_website_temp}/tvvorschau/temp??.jpg
     #html Vorschau
     echo "<!doctype html>
@@ -69,7 +69,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   <body>
     <img src=${vorschau}.jpg width=\"100%\">
   </body>
-  </html>" > "${dir_website_temp}/tvvorschau/${vorschau}.html"
+  </html>" > ${dir_website_temp}/tvvorschau/${vorschau}.html
   fi
 fi
 done
@@ -88,20 +88,20 @@ if test -d "${verzeichnis}"; then
     sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
     sekint=${sek%.*}
     min=$(( $sekint /60 ))
-    vorschau=$(echo "${datei%.*}" | tr -cd '[:alnum:]')
+    vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
     echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${verzeichnisolz}&nbsp;${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
-  if test -e "${dir_website_temp}/tvvorschaualt/${vorschau}.jpg"; then
-    mv "${dir_website_temp}/tvvorschaualt/${vorschau}.jpg" "${dir_website_temp}/tvvorschau/${vorschau}.jpg"
-    mv "${dir_website_temp}/tvvorschaualt/${vorschau}.html" "${dir_website_temp}/tvvorschau/${vorschau}.html"
+  if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
+    mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
+    mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
   else
     # jpg Vorschau
     for prozent in {07..84..7}
     do
       ffmpegthumbnailer -i "$datei" -s 0 -t ${prozent}% -o ${dir_website_temp}/tvvorschau/temp${prozent}.jpg
     done
-    rm "$(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    rm "$(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 "${dir_website_temp}/tvvorschau/temp??.jpg" "${dir_website_temp}/tvvorschau/${vorschau}.jpg"
+    rm $(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    rm $(du ${dir_website_temp}/tvvorschau/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 ${dir_website_temp}/tvvorschau/temp??.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     rm ${dir_website_temp}/tvvorschau/temp??.jpg
     #html Vorschau
     echo "<!doctype html>
@@ -113,7 +113,7 @@ if test -d "${verzeichnis}"; then
   <body>
     <img src=${vorschau}.jpg width=\"100%\">
   </body>
-  </html>" > "${dir_website_temp}/tvvorschau/${vorschau}.html"
+  </html>" > ${dir_website_temp}/tvvorschau/${vorschau}.html
   fi
   fi
   done
@@ -159,21 +159,21 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
   sekint=${sek%.*}
   min=$(( $sekint /60 ))
-  vorschau=$(echo "${datei%.*}" | tr -cd '[:alnum:]')
+  vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
   echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
-  if test -e "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg"; then
-    mv "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg" "${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg"
-    mv "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html" "${dir_website_temp}/tvvorschaukinder/${vorschau}.html"
+  if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
+    mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
+    mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
   else
     # jpg Vorschau
-    for prozent in {05..75..10}
+    for prozent in {07..84..7}
     do
       ffmpegthumbnailer -i "$datei" -s 0 -t ${prozent}% -o ${dir_website_temp}/tvvorschaukinder/temp${prozent}.jpg
     done
-    rm "$(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    rm "$(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x6 "${dir_website_temp}/tvvorschaukinder/temp??.jpg" "${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg"
-    rm "${dir_website_temp}/tvvorschaukinder/temp??.jpg"
+    rm $(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    rm $(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 ${dir_website_temp}/tvvorschaukinder/temp??.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
+    rm ${dir_website_temp}/tvvorschaukinder/temp??.jpg
     #html Vorschau
     echo "<!doctype html>
   <html>
@@ -184,7 +184,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   <body>
     <img src=${vorschau}.jpg width=\"100%\">
   </body>
-  </html>" > "${dir_website_temp}/tvvorschaukinder/${vorschau}.html"
+  </html>" > ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
   fi
 fi
 done
@@ -203,21 +203,21 @@ if test -d "${verzeichnis}"; then
     sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
     sekint=${sek%.*}
     min=$(( $sekint /60 ))
-    vorschau=$(echo "${datei%.*}" | tr -cd '[:alnum:]')
+    vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
     echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${verzeichnisolz}&nbsp;${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
-  if test -e "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg"; then
-    mv "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg" "${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg"
-    mv "${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html" "${dir_website_temp}/tvvorschaukinder/${vorschau}.html"
+  if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
+    mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
+    mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
   else
     # jpg Vorschau
-    for prozent in {05..75..10}
+    for prozent in {07..84..7}
     do
       ffmpegthumbnailer -i "$datei" -s 0 -t ${prozent}% -o ${dir_website_temp}/tvvorschaukinder/temp${prozent}.jpg
     done
-    rm "$(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    rm "$(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')"
-    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x6 "${dir_website_temp}/tvvorschaukinder/temp??.jpg" "${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg"
-    rm "${dir_website_temp}/tvvorschaukinder/temp??.jpg"
+    rm $(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    rm $(du ${dir_website_temp}/tvvorschaukinder/temp??.jpg | sort -n | awk 'NR == 1 { print $2 }')
+    montage -background '#ffffff' -geometry 960x540+2+2 -tile 1x10 ${dir_website_temp}/tvvorschaukinder/temp??.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
+    rm ${dir_website_temp}/tvvorschaukinder/temp??.jpg
     #html Vorschau
     echo "<!doctype html>
   <html>
@@ -228,11 +228,11 @@ if test -d "${verzeichnis}"; then
   <body>
     <img src=${vorschau}.jpg width=\"100%\">
   </body>
-  </html>" > "${dir_website_temp}/tvvorschaukinder/${vorschau}.html"
+  </html>" > ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
   fi
   fi
   done
-  echo '    </ul><br>' >> "${dir_website_temp}/indexkinder.html"
+  echo '    </ul><br>' >> ${dir_website_temp}/indexkinder.html
   cd ..
 fi
 done
