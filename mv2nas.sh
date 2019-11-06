@@ -46,6 +46,12 @@ rsync --progress --remove-source-files *ZDF*'Die Spezialisten'* ${dir_nas_media}
 echo 'Fernsehfilm der Woche'
 rsync --progress --remove-source-files *ZDF*'Fernsehfilm der Woche'* ${dir_nas_media}/TVSendungen/90_-_Fernsehfilm_der_Woche 2>/dev/null
 #
+echo 'Dengler'
+rsync --progress --remove-source-files *ZDF*'Dengler'* ${dir_nas_media}/TVSendungen/90_-_Dengler 2>/dev/null
+#
+echo 'Die Toten vom Bodensee'
+rsync --progress --remove-source-files *ZDF*'Dengler'* ${dir_nas_media}/TVSendungen/90_-_Die_Toten_vom_Bodensee 2>/dev/null
+#
 echo 'Der Kriminalist'
 rsync --progress --remove-source-files *ZDF*'Kriminalist'* ${dir_nas_media}/TVSendungen/60_-_Kriminalist 2>/dev/null
 #
@@ -124,6 +130,12 @@ rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Fernsehfilm_der_Woche
 rename 's/_ZDF_Der Fernsehfilm der Woche//' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+cd ${dir_nas_media}/TVSendungen/90_-_Dengler
+rename 's/_ZDF_Dengler//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+cd ${dir_nas_media}/TVSendungen/90_-_Die_Toten_vom_Bodensee
+rename 's/_ZDF_Die Toten vom Bodensee//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Kriminalist
 rename 's/_ZDF_Der Kriminalist//' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
@@ -161,6 +173,7 @@ cd ${dir_nas_media}/TVSendungen
 rename 's/_ZDF_/ - /' *
 rename 's/_ard_/ - /' *
 rename 's/_ZDFneo_ZDFneo/ - /' *
+rename 's/_ZDFneo_/ - /' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder
 rename 's/_ZDF_/ - /' *
