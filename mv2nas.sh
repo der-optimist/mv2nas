@@ -99,88 +99,111 @@ set -e # nicht gemountetes NAS abfangen - bei Fehler beenden
 cd ${dir_nas_media}/TVSendungen_Kinder/Bibi_Blocksberg
 rename 's/_ZDF_//' *
 rename 's/Bibi Blocksberg//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Bibi_und_Tina
 rename 's/_ZDF_//' *
 rename 's/Bibi und Tina//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Biene_Maja
 rename 's/_ZDF_//' *
 rename 's/ - Die Biene Maja//' *
 rename 's/Die Biene Maja - / - /' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Conni
 rename 's/_ZDF_//' *
 rename 's/Meine Freundin Conni//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Mia_and_me
 rename 's/_ZDF_//' *
 rename 's/Mia and me//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Peter_Pan
 rename 's/_ZDF_//' *
 rename 's/Peter Pan//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Der_Alte
 rename 's/_ZDF_Der Alte//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Die_Chefin
 rename 's/_ZDF_Die Chefin//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Fernsehfilm_der_Woche
 rename 's/_ZDF_Der Fernsehfilm der Woche//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Dengler
 rename 's/_ZDF_Dengler//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Die_Toten_vom_Bodensee
 rename 's/_ZDF_Die Toten vom Bodensee//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Kriminalist
 rename 's/_ZDF_Der Kriminalist//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/45_-_Letzte_Spur_Berlin
 rename 's/_ZDF_Letzte Spur Berlin//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Ein_starkes_Team
 rename 's/_ZDF_Ein starkes Team//' *
 rename 's/ - Ein starkes Team//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Polizeiruf
 rename 's/_ard_Polizeiruf 110//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/45_-_Soko_Leipzig
 rename 's/_ZDF_SOKO Leipzig//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/45_-_Soko_Stuttgart
 rename 's/_ZDF_SOKO Stuttgart//' *
 rename 's/ - SOKO Stuttgart//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/45_-_Soko_Köln
 rename 's/_ZDF_SOKO Köln//' *
 rename 's/ - SOKO Köln//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/45_-_Sonstige_Sokos
 rename 's/_ZDF_/ - /' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Staatsanwalt
 rename 's/_ZDF_Der Staatsanwalt//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen/90_-_Tatort
 rename 's/_ard_Tatort//' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen
 rename 's/_ZDF_/ - /' *
 rename 's/_ard_/ - /' *
 rename 's/_ZDFneo_ZDFneo/ - /' *
 rename 's/_ZDFneo_/ - /' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 cd ${dir_nas_media}/TVSendungen_Kinder
 rename 's/_ZDF_/ - /' *
 rename 's/_ard_/ - /' *
 rename 's/_ZDFneo_ZDFneo/ - /' *
 rename 's/_ZDFneo_/ - /' *
-rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*(_TV_Ton)*//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)*//' *
 #
 cd ${dir_tvu_script}
 /bin/bash ${dir_tvu_script}/tvupdate.sh &
