@@ -12,6 +12,7 @@ dir_tvu_script='/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv'
 #
 cd ${dir_downloads}
 rename 's/_daserste_/_ard_/' *
+rename 's/(^.{10}_[^_]+_)(.+)(\s\-\s)\2(.+)/$1$2$4/' *
 #
 echo '--- schiebe aufs NAS ---'
 echo '- Kinder -'
