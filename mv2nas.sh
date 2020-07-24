@@ -28,6 +28,9 @@ rsync --progress --remove-source-files *Biene*Maja* ${dir_nas_media}/TVSendungen
 echo 'Conni'
 rsync --progress --remove-source-files *Meine*Freundin*Conni* ${dir_nas_media}/TVSendungen_Kinder/Conni 2>/dev/null
 #
+echo 'Lieselotte'
+rsync --progress --remove-source-files *Lieselotte* ${dir_nas_media}/TVSendungen_Kinder/Lieselotte 2>/dev/null
+#
 echo 'Mia and me'
 rsync --progress --remove-source-files *Mia*and*me* ${dir_nas_media}/TVSendungen_Kinder/Mia_and_me 2>/dev/null
 #
@@ -116,6 +119,11 @@ rename 's/(_TV_Ton)//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Conni
 rename 's/_ZDF_//' *
 rename 's/Meine Freundin Conni//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)//' *
+cd ${dir_nas_media}/TVSendungen_Kinder/Lieselotte
+rename 's/_ZDF_//' *
+rename 's/Lieselotte//' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 rename 's/(_TV_Ton)//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Mia_and_me
