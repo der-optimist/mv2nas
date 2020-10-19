@@ -37,6 +37,9 @@ rsync --progress --remove-source-files *Mia*and*me* ${dir_nas_media}/TVSendungen
 echo 'Peter Pan'
 rsync --progress --remove-source-files *Peter*Pan* ${dir_nas_media}/TVSendungen_Kinder/Peter_Pan 2>/dev/null
 #
+echo 'Zacki Zoobande'
+rsync --progress --remove-source-files *Zacki*Zoobande* ${dir_nas_media}/TVSendungen_Kinder/Zacki_Zoobande 2>/dev/null
+#
 echo '- Eltern -'
 echo 'Der Alte'
 rsync --progress --remove-source-files *ZDF*'Der Alte'* ${dir_nas_media}/TVSendungen/60_-_Der_Alte 2>/dev/null
@@ -134,6 +137,11 @@ rename 's/(_TV_Ton)//' *
 cd ${dir_nas_media}/TVSendungen_Kinder/Peter_Pan
 rename 's/_ZDF_//' *
 rename 's/Peter Pan//' *
+rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
+rename 's/(_TV_Ton)//' *
+cd ${dir_nas_media}/TVSendungen_Kinder/Zacki_Zoobande
+rename 's/_ZDF_//' *
+rename 's/Zacki und die Zoobande//' *
 rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 rename 's/(_TV_Ton)//' *
 cd ${dir_nas_media}/TVSendungen/60_-_Der_Alte
