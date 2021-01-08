@@ -214,14 +214,14 @@ cd ${dir_nas_media}/TVSendungen/90_-_Tatort
 rename 's/_Tatort//' *
 #rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 #rename 's/(_TV_Ton)//' *
-#cd ${dir_nas_media}/TVSendungen
+cd ${dir_nas_media}/TVSendungen
 #rename 's/_ZDF_/ - /' *
 #rename 's/_ard_/ - /' *
 #rename 's/_ZDFneo_ZDFneo/ - /' *
 #rename 's/_ZDFneo_/ - /' *
 #rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 #rename 's/(_TV_Ton)//' *
-rename 's/_/ - /' *
+rename 's/_/ - /' *.mp4
 cd ${dir_nas_media}/TVSendungen_Kinder
 #rename 's/_ZDF_/ - /' *
 #rename 's/_ard_/ - /' *
@@ -229,7 +229,7 @@ cd ${dir_nas_media}/TVSendungen_Kinder
 #rename 's/_ZDFneo_/ - /' *
 #rename 's/(_http_|_hls_)[0-9a-z\s]*(_deu)*//' *
 #rename 's/(_TV_Ton)//' *
-rename 's/_/ - /' *
+rename 's/_/ - /' *.mp4
 #
 cd ${dir_tvu_script}
 /bin/bash ${dir_tvu_script}/tvupdate.sh &
