@@ -103,7 +103,7 @@ rsync --progress --remove-source-files *JoNaLu* ${dir_nas_media}/TVSendungen_Kin
 rsync --progress --remove-source-files *Leopard*Seeb*Co* ${dir_nas_media}/TVSendungen_Kinder 2>/dev/null
 #
 #echo 'Sonstige mp4'
-#rsync --progress --remove-source-files *'.mp4' ${dir_nas_media}/TVSendungen 2>/dev/null
+#rsync --progress --remove-source-files *.mp4 ${dir_nas_media}/TVSendungen 2>/dev/null
 #
 echo '--- benenne auf dem NAS um ---'
 set -e # nicht gemountetes NAS abfangen - bei Fehler beenden
