@@ -229,4 +229,4 @@ cd ${dir_nas_media}/TVSendungen_Kinder
 rename 's/_/ - /' *.mp4
 #
 cd ${dir_tvu_script}
-/bin/bash ${dir_tvu_script}/tvupdate.sh &
+#/bin/bash ${dir_tvu_script}/tvupdate.sh &
