@@ -15,6 +15,10 @@ cd ${dir_downloads}
 #rename 's/_KI.KA_/_ZDF_/' *
 # remove doublicates in name:
 rename 's/(^.{10}_[^_]+_)(.+)(\s\-\s)\2(.+)/$1$2$4/' *
+# remove special chars:
+rename 's/&/und/' *
+rename 's/:/ /' *
+rename 's/;/ /' *
 #
 echo '--- schiebe aufs NAS ---'
 echo '- Kinder -'
