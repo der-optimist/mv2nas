@@ -148,6 +148,7 @@ cd ${dir_nas_media}/TVSendungen/45_-_Letzte_Spur_Berlin
 rename 's/ - Letzte Spur Berlin//' *
 #
 cd ${dir_nas_media}/TVSendungen/90_-_Ein_starkes_Team
+rename 's/ - Ein starkes Team - Ein starkes Team//' *
 rename 's/ - Ein starkes Team//' *
 #
 cd ${dir_nas_media}/TVSendungen/90_-_Polizeiruf
