@@ -94,8 +94,9 @@ for filename_origin in get_files(dir_downloads,filetype):
     #print("{} => {}".format(source_filepath,target_filepath))
     
     if not os.path.exists(target_foder):	
-    os.makedirs(target_foder)
+        os.makedirs(target_foder)
     #move(source_filepath, target_filepath)
+    check_output(["touch",target_filepath])
     check_output(["rsync","--progress","--remove-source-files", source_filepath, target_filepath, "2>/dev/null"])
     
     tvu_command = "/bin/bash " + path_tvu_script + " &"
