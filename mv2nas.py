@@ -31,7 +31,7 @@ for filename in get_files(dir_downloads,filetype):
             for i in range(2,len(filename_split)):
                 filename = filename + " - " + i
                 print("single doublicates")
-    except:
-        print("no doublicates")
+    except Exception as e:
+        print("error: {}".format(e))
         pass
     print(filename)
