@@ -84,5 +84,6 @@ for filename_origin in get_files(dir_downloads,filetype):
             target_foder = dir_nas_media + "/" + "TVSendungen"
             target_filepath = dir_nas_media + "/" + "TVSendungen" + "/" + filename
     
+    print(filename)
     print(target_filepath)
     
