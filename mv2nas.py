@@ -76,7 +76,8 @@ for filename_origin in get_files(dir_downloads,filetype):
     
     for searchstring in search_strings_and_target_folders:
         if (" - " + searchstring[0]) in filename:
-            filename.replace(" - " + searchstring[0],"")
+            filename_split = filename.split((" - " + searchstring[0]))
+            filename = filename_split[0] + filename_split[1]
             print(filename)
             target_foder = dir_nas_media + "/" + searchstring[1]
             target_filepath = dir_nas_media + "/" + searchstring[1] + "/" + filename
