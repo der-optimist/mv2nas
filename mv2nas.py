@@ -21,12 +21,12 @@ for filename in get_files(dir_downloads,filetype):
     print(filename)
     filename_split = filename.split(" - ")
     try:
-        if (filename_split[1] + filename_split[2]) == (filename_split[3] + filename_split[4]):
+        if (filename_split[1] + " - " + filename_split[2]) in (filename_split[3] + " - " + filename_split[4]):
             filename = filename_split[0] + " - "
             for i in range(3,len(filename_split)):
                 filename = filename + " - " + i
                 print("double doublicates")
-        if filename_split[1] == filename_split[2]:
+        if filename_split[1] in filename_split[2]:
             filename = filename_split[0] + " - "
             for i in range(2,len(filename_split)):
                 filename = filename + " - " + i
