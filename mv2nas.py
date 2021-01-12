@@ -1,9 +1,10 @@
 import os
+from shutil import move
 
 # Input
 dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
 dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5'
-dir_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv'
+path_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
                                      ["Bibi und Tina", "TVSendungen_Kinder/Bibi_und_Tina"],
@@ -47,6 +48,7 @@ def get_files(folder, filetype):
     return list_filenames
 
 for filename_origin in get_files(dir_downloads,filetype):
+    source_filepath = dir_downloads + "/" + filename_origin
     filename = filename_origin
     #print(filename)
     # Remove Douplicates in Filename
@@ -72,13 +74,13 @@ for filename_origin in get_files(dir_downloads,filetype):
     filename.replace(",","")
     
     # show what you have done...
-    print(filename)
+#    print(filename)
     
     for searchstring in search_strings_and_target_folders:
         if (" - " + searchstring[0]) in filename:
             filename_split = filename.split((" - " + searchstring[0]))
             filename = filename_split[0] + filename_split[1]
-            print(filename)
+#            print(filename)
             target_foder = dir_nas_media + "/" + searchstring[1]
             target_filepath = dir_nas_media + "/" + searchstring[1] + "/" + filename
             break
@@ -86,5 +88,11 @@ for filename_origin in get_files(dir_downloads,filetype):
             target_foder = dir_nas_media + "/" + "TVSendungen"
             target_filepath = dir_nas_media + "/" + "TVSendungen" + "/" + filename
     
-    print(target_filepath)
+#    print(target_filepath)
+    
+    print("{} => {}".format(source_filepath,target_filepath))
+    #move(source_filepath, target_filepath)
+    
+    tvu_command = "/bin/bash " + path_tvu_script + " &"
+    #os.system(tvu_command)
     
