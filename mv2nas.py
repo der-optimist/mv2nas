@@ -33,7 +33,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["SOKO Köln", "TVSendungen/45_-_Soko_Köln"],
                                      ["Der Staatsanwalt", "TVSendungen/60_-_Staatsanwalt"],
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
-                                     ["Schatten der Mörder - Shadowplay", "TVSendungen/90_Schatten_der_Mörder"]]
+                                     ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
 
 
 def get_files(folder, filetype):
