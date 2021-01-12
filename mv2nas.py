@@ -24,12 +24,12 @@ for filename in get_files(dir_downloads,filetype):
         if (filename_split[1] + " - " + filename_split[2]) in (filename_split[3] + " - " + filename_split[4]):
             filename = filename_split[0] + " - "
             for i in range(3,len(filename_split)):
-                filename = filename + " - " + i
+                filename = filename + " - " + filename_split[i]
                 print("double doublicates")
         if filename_split[1] in filename_split[2]:
             filename = filename_split[0] + " - "
             for i in range(2,len(filename_split)):
-                filename = filename + " - " + i
+                filename = filename + " - " + filename_split[i]
                 print("single doublicates")
     except Exception as e:
         print("error: {}".format(e))
