@@ -1,5 +1,6 @@
 import os
 from shutil import move
+from subprocess import check_output
 
 # Input
 dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
@@ -74,7 +75,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     filename.replace(",","")
     
     # show what you have done...
-#    print(filename)
+    print(filename)
     
     for searchstring in search_strings_and_target_folders:
         if (" - " + searchstring[0]) in filename:
@@ -90,10 +91,9 @@ for filename_origin in get_files(dir_downloads,filetype):
     
 #    print(target_filepath)
     
-    print("{} => {}".format(source_filepath,target_filepath))
-    if not os.path.exists(target_foder):
-        os.makedirs(target_foder)
+    #print("{} => {}".format(source_filepath,target_filepath))
     #move(source_filepath, target_filepath)
+    check_output(["rsync","--progress","--remove-source-files", source_filepath, target_filepath, "2>/dev/null"])
     
     tvu_command = "/bin/bash " + path_tvu_script + " &"
     #os.system(tvu_command)
