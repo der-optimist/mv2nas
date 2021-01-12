@@ -91,6 +91,8 @@ for filename_origin in get_files(dir_downloads,filetype):
 #    print(target_filepath)
     
     print("{} => {}".format(source_filepath,target_filepath))
+    if not os.path.exists(target_foder):
+        os.makedirs(target_foder)
     #move(source_filepath, target_filepath)
     
     tvu_command = "/bin/bash " + path_tvu_script + " &"
