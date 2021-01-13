@@ -102,9 +102,8 @@ for filename_origin in get_files(dir_downloads,filetype):
         os.rename(source_filepath,source_filepath_renamed)
     
     #check_output(["touch",target_filepath])
-    check_output(["cd",dir_downloads,"&&","rsync","--progress","--remove-source-files", filename, target_foder, "2>/dev/null"])
+    check_output(["rsync","--progress","--remove-source-files", source_filepath_renamed, target_foder, "2>/dev/null"],shell=True)
     
     tvu_command = "/bin/bash " + path_tvu_script + " &"
-    print(tvu_command)
     #os.system(tvu_command)
     
