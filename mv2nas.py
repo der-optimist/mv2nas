@@ -26,6 +26,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Die Toten vom Bodensee", "TVSendungen/90_-_Die_Toten_vom_Bodensee"],
                                      ["Letzte Spur Berlin", "TVSendungen/45_-_Letzte_Spur_Berlin"],
                                      ["Ein starkes Team", "TVSendungen/90_-_Ein_starkes_Team"],
+                                     ["München Mord", "TVSendungen/90_-_München_Mord"],
                                      ["Polizeiruf 110", "TVSendungen/90_-_Polizeiruf"],
                                      ["Der Samstagskrimi", "TVSendungen/90_-_Sonstige_Samstagskrimis"],
                                      ["SOKO Leipzig", "TVSendungen/45_-_Soko_Leipzig"],
@@ -33,6 +34,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["SOKO Köln", "TVSendungen/45_-_Soko_Köln"],
                                      ["Der Staatsanwalt", "TVSendungen/60_-_Staatsanwalt"],
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
+                                     ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
 
 # Code
