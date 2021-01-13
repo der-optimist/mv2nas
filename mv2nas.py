@@ -74,6 +74,8 @@ for filename_origin in get_files(dir_downloads,filetype):
     filename.replace(":","")
     filename.replace(",","")
     filename.replace("–","-")
+    filename.replace("<", "")
+    filename.replace(">", "")
     
     # show what you have done...
     print(filename)
@@ -101,7 +103,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     if source_filepath_renamed != source_filepath:
         os.rename(source_filepath,source_filepath_renamed)
     
-    rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ","\\ ") + " " + target_foder.replace(" ","\\ ") + " 2>/dev/null"
+    rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ", "\\ ").replace("?", "\\?").replace("!", "\\!").replace("(", "\\(").replace(")", "\\)").replace("*", "\\*") + " " + target_foder + " 2>/dev/null"
     print(rsync_command)
     check_output(rsync_command,shell=True)
     #check_output(['rsync','--progress','--remove-source-files', source_filepath_renamed, target_foder, '2>/dev/null'],shell=True)
