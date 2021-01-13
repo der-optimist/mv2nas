@@ -101,10 +101,12 @@ for filename_origin in get_files(dir_downloads,filetype):
     if source_filepath_renamed != source_filepath:
         os.rename(source_filepath,source_filepath_renamed)
     
-    #check_output(["touch",target_filepath])
-    check_output("rsync --version",shell=True)
-    #check_output(["rsync","--progress","--remove-source-files", source_filepath_renamed, target_foder, "2>/dev/null"],shell=True)
+    rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ","\\ ") + " " + target_foder.replace(" ","\\ ") + " 2>/dev/null"
+    print(rsync_command)
+    check_output(rsync_command,shell=True)
+    #check_output(['rsync','--progress','--remove-source-files', source_filepath_renamed, target_foder, '2>/dev/null'],shell=True)
     
-    tvu_command = "/bin/bash " + path_tvu_script + " &"
+    tvu_command = '/bin/bash ' + path_tvu_script + ' &'
+    print(tvu_command)
     #os.system(tvu_command)
-    
+    break
