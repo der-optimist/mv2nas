@@ -1,10 +1,9 @@
 import os
-#from shutil import move
 from subprocess import check_output
 
 # Input
 dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
-dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5'
+dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
 path_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
@@ -36,39 +35,37 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
 
+# Code
 
 def get_files(folder, filetype):
-#    list_paths = []
     list_filenames = []
     list_dir = os.listdir(folder)
     for file in list_dir:
         if file.endswith(filetype):
-#            file_path = os.path.normpath(os.path.join(folder, file))
-#            list_paths.append(file_path)
             list_filenames.append(file)
     return list_filenames
 
 for filename_origin in get_files(dir_downloads,filetype):
     source_filepath = dir_downloads + "/" + filename_origin
     filename = filename_origin
-    #print(filename)
+    
     # Remove Douplicates in Filename
     filename_split = filename.split(" - ")
     try:
         if (filename_split[1] + " - " + filename_split[2]) in (filename_split[3] + " - " + filename_split[4]):
-            #2020-12-12 - Schatten - Shadow - Schatten - Shadow (1).mp4
+            #example: 2020-12-12 - Schatten - Shadow - Schatten - Shadow (1).mp4
             filename = filename_split[0]
             for i in range(3,len(filename_split)):
                 filename = filename + " - " + filename_split[i]
         if filename_split[1] in filename_split[2]:
-            #2020-12-12 - Schatten - Schatten - Folge (1).mp4
+            #example: 2020-12-12 - Schatten - Schatten - Folge (1).mp4
             filename = filename_split[0]
             for i in range(2,len(filename_split)):
                 filename = filename + " - " + filename_split[i]
     except Exception as e:
         pass
     
-    # replace special chars
+    # replace special chars in file name
     filename.replace("&","und")
     filename.replace(";","")
     filename.replace(":","")
@@ -80,11 +77,13 @@ for filename_origin in get_files(dir_downloads,filetype):
     # show what you have done...
     print(filename)
     
+    # check if it contains a searchstring - so it would get a special target folder
     for searchstring in search_strings_and_target_folders:
         if (" - " + searchstring[0]) in filename:
+            # Cut out that part, as it is already part of the folder name. filename.replace() did not work - why???
             filename_split = filename.split((" - " + searchstring[0]))
             filename = filename_split[0] + filename_split[1]
-#            print(filename)
+            print("Sortiere es ein unter: {}".format(searchstring[0]))
             target_foder = dir_nas_media + "/" + searchstring[1] + "/"
             target_filepath = dir_nas_media + "/" + searchstring[1] + "/" + filename
             break
@@ -92,22 +91,17 @@ for filename_origin in get_files(dir_downloads,filetype):
             target_foder = dir_nas_media + "/" + "TVSendungen" + "/"
             target_filepath = dir_nas_media + "/" + "TVSendungen" + "/" + filename
     
-#    print(target_filepath)
-    
-    #print("{} => {}".format(source_filepath,target_filepath))
-    
     if not os.path.exists(target_foder):	
         os.makedirs(target_foder)
-    #move(source_filepath, target_filepath)
+    
+    # rename the file
     source_filepath_renamed = dir_downloads + "/" + filename
     if source_filepath_renamed != source_filepath:
         os.rename(source_filepath,source_filepath_renamed)
     
     rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ", "\\ ").replace("?", "\\?").replace("!", "\\!").replace("(", "\\(").replace(")", "\\)").replace("*", "\\*") + " " + target_foder + " 2>/dev/null"
-    #print(rsync_command)
     check_output(rsync_command,shell=True)
-    #check_output(['rsync','--progress','--remove-source-files', source_filepath_renamed, target_foder, '2>/dev/null'],shell=True)
-    
+
+# start tvupdate script
 tvu_command = '/bin/bash ' + path_tvu_script + ' &'
-#print(tvu_command)
 os.system(tvu_command)
