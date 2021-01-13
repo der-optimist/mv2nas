@@ -18,7 +18,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Unser Sandmännchen", "TVSendungen_Kinder"],
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
-                                     ["Leopard Seebär und Co", "TVSendungen_Kinder"],
+                                     ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
                                      ["Der Alte", "TVSendungen/60_-_Der_Alte"],
                                      ["Die Chefin", "TVSendungen/60_-_Die_Chefin"],
                                      ["Der Fernsehfilm der Woche", "TVSendungen/90_-_Fernsehfilm_der_Woche"],
