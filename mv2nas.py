@@ -73,6 +73,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     filename.replace(";","")
     filename.replace(":","")
     filename.replace(",","")
+    filename.replace("–","-")
     
     # show what you have done...
     print(filename)
