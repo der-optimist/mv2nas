@@ -71,13 +71,13 @@ for filename_origin in get_files(dir_downloads,filetype):
         pass
     
     # replace special chars in file name
-    filename.replace("&","und")
-    filename.replace(";","")
-    filename.replace(":","")
-    filename.replace(",","")
-    filename.replace("–","-")
-    filename.replace("<", "")
-    filename.replace(">", "")
+    filename = filename.replace("&","und")
+    filename = filename.replace(";","")
+    filename = filename.replace(":","")
+    filename = filename.replace(",","")
+    filename = filename.replace("–","-")
+    filename = filename.replace("<", "")
+    filename = filename.replace(">", "")
     
     # show what you have done...
     print(filename)
@@ -85,9 +85,8 @@ for filename_origin in get_files(dir_downloads,filetype):
     # check if it contains a searchstring - so it would get a special target folder
     for searchstring in search_strings_and_target_folders:
         if (" - " + searchstring[0]) in filename:
-            # Cut out that part, as it is already part of the folder name. filename.replace() did not work - why???
-            filename_split = filename.split((" - " + searchstring[0]))
-            filename = filename_split[0] + filename_split[1]
+            # Cut out that part, as it is already part of the folder name.
+            filename = filename.replace((" - " + searchstring[0]),"")
             print("Sortiere es ein unter: {}".format(searchstring[0]))
             target_foder = dir_nas_media + "/" + searchstring[1] + "/"
             target_filepath = dir_nas_media + "/" + searchstring[1] + "/" + filename
