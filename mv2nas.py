@@ -9,6 +9,7 @@ filetype = '.mp4'
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
                                      ["Bibi und Tina", "TVSendungen_Kinder/Bibi_und_Tina"],
                                      ["Die Biene Maja", "TVSendungen_Kinder/Biene_Maja"],
+                                     ["Die Sendung mit der Maus", "TVSendungen_Kinder/Die_Maus"],
                                      ["Meine Freundin Conni", "TVSendungen_Kinder/Conni"],
                                      ["Lieselotte", "TVSendungen_Kinder/Lieselotte"],
                                      ["Mia and me", "TVSendungen_Kinder/Mia_and_me"],
