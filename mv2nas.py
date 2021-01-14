@@ -16,6 +16,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Peter Pan", "TVSendungen_Kinder/Peter_Pan"],
                                      ["Zacki und die Zoobande", "TVSendungen_Kinder/Zacki_Zoobande"],
                                      ["Der kleine Nick", "TVSendungen_Kinder"],
+                                     ["Der kleine Rabe Socke", "TVSendungen_Kinder/Rabe_Socke"],
                                      ["Unser Sandmännchen", "TVSendungen_Kinder"],
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
