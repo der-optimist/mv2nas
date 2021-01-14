@@ -78,6 +78,13 @@ for filename_origin in get_files(dir_downloads,filetype):
     filename = filename.replace("–","-")
     filename = filename.replace("<", "")
     filename = filename.replace(">", "")
+    filename = filename.replace("!", "")
+    filename = filename.replace("?", "")
+    filename = filename.replace("*", "")
+    filename = filename.replace("[", "(")
+    filename = filename.replace("]", ")")
+    filename = filename.replace("{", "(")
+    filename = filename.replace("}", ")")
     
     # show what you have done...
     print(filename)
@@ -103,7 +110,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     if source_filepath_renamed != source_filepath:
         os.rename(source_filepath,source_filepath_renamed)
     
-    rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ", "\\ ").replace("?", "\\?").replace("!", "\\!").replace("(", "\\(").replace(")", "\\)").replace("*", "\\*") + " " + target_foder + " 2>/dev/null"
+    rsync_command = "rsync --progress --remove-source-files " + source_filepath_renamed.replace(" ", "\\ ").replace("(", "\\(").replace(")", "\\)") + " " + target_foder + " 2>/dev/null"
     check_output(rsync_command,shell=True)
 
 # start tvupdate script
