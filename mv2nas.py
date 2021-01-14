@@ -19,6 +19,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
+                                     ["Arne Dahl", "TVSendungen/110_-_Arne_Dahl"],
                                      ["Der Alte", "TVSendungen/60_-_Der_Alte"],
                                      ["Die Chefin", "TVSendungen/60_-_Die_Chefin"],
                                      ["Der Fernsehfilm der Woche", "TVSendungen/90_-_Fernsehfilm_der_Woche"],
@@ -34,6 +35,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["SOKO Köln", "TVSendungen/45_-_Soko_Köln"],
                                      ["Der Staatsanwalt", "TVSendungen/60_-_Staatsanwalt"],
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
+                                     ["The Mallorca Files", "TVSendungen/45_-_Mallorca_Files"],
                                      ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
 
