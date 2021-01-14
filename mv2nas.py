@@ -30,6 +30,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Letzte Spur Berlin", "TVSendungen/45_-_Letzte_Spur_Berlin"],
                                      ["Ein starkes Team", "TVSendungen/90_-_Ein_starkes_Team"],
                                      ["München Mord", "TVSendungen/90_-_München_Mord"],
+                                     ["Rechtsanwalt Vernau", "TVSendungen/90_-_Rechtsanwalt_Vernau"],
                                      ["Polizeiruf 110", "TVSendungen/90_-_Polizeiruf"],
                                      ["Der Samstagskrimi", "TVSendungen/90_-_Sonstige_Samstagskrimis"],
                                      ["SOKO Leipzig", "TVSendungen/45_-_Soko_Leipzig"],
