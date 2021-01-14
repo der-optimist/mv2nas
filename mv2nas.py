@@ -21,6 +21,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
+                                     ["Giraffe Erdmännchen und Co", "TVSendungen_Kinder/Erdmännchen_Giraffe_und_Co"],
                                      ["Arne Dahl", "TVSendungen/110_-_Arne_Dahl"],
                                      ["Der Alte", "TVSendungen/60_-_Der_Alte"],
                                      ["Die Chefin", "TVSendungen/60_-_Die_Chefin"],
