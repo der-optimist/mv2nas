@@ -40,6 +40,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Der Staatsanwalt", "TVSendungen/60_-_Staatsanwalt"],
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
                                      ["The Mallorca Files", "TVSendungen/45_-_Mallorca_Files"],
+                                     ["WaPo Bodensee", "TVSendungen/45_-_WaPo_Bodensee"],
                                      ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
 
