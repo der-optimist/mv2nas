@@ -33,16 +33,23 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["München Mord", "TVSendungen/90_-_München_Mord"],
                                      ["Rechtsanwalt Vernau", "TVSendungen/90_-_Rechtsanwalt_Vernau"],
                                      ["Polizeiruf 110", "TVSendungen/90_-_Polizeiruf"],
+                                     ["Neben der Spur", "TVSendungen/90_-_Neben_der_Spur"],
                                      ["Der Samstagskrimi", "TVSendungen/90_-_Sonstige_Samstagskrimis"],
+                                     ["Unter anderen Umständen", "TVSendungen/90_-_Sonstige_Samstagskrimis"],
+                                     ["Die Toten von Salzburg", "TVSendungen/90_-_Sonstige_Samstagskrimis"],
                                      ["SOKO Leipzig", "TVSendungen/45_-_Soko_Leipzig"],
                                      ["SOKO Stuttgart", "TVSendungen/45_-_Soko_Stuttgart"],
                                      ["SOKO Köln", "TVSendungen/45_-_Soko_Köln"],
                                      ["Der Staatsanwalt", "TVSendungen/60_-_Staatsanwalt"],
                                      ["Tatort", "TVSendungen/90_-_Tatort"],
                                      ["The Mallorca Files", "TVSendungen/45_-_Mallorca_Files"],
-                                     ["WaPo Bodensee", "TVSendungen/45_-_WaPo_Bodensee"],
+                                     ["Filme - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
+                                     ["Film im rbb - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
+                                     ["Krimis im Ersten - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
+                                     ["Die Heiland - Wir sind Anwalt", "TVSendungen/45_-_Die_Heiland"],
+                                     ["Kanzlei Berger", "TVSendungen/45_-_Kanzlei_Berger"],
                                      ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
-                                     ["Schatten der Mörder - Shadowplay", "TVSendungen/90_-_Schatten_der_Mörder"]]
+                                     ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
 
