@@ -45,7 +45,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   sekint=${sek%.*}
   min=$(( $sekint /60 ))
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -89,7 +89,7 @@ if test -d "${verzeichnis}"; then
     sekint=${sek%.*}
     min=$(( $sekint /60 ))
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${verzeichnisolz}&nbsp;${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -160,7 +160,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   sekint=${sek%.*}
   min=$(( $sekint /60 ))
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
@@ -204,7 +204,7 @@ if test -d "${verzeichnis}"; then
     sekint=${sek%.*}
     min=$(( $sekint /60 ))
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"https://www.google.de/search?s&btnI=Im+Feeling+Lucky&q=${verzeichnisolz}&nbsp;${datei%.*}&nbsp;site:zdf.de&nbsp;OR&nbsp;site:ardmediathek.de\">schau&nbsp;nach</a>)&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
