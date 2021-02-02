@@ -6,6 +6,13 @@ dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
 dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
 path_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
+dir_jo = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
+search_strings_jo = ["heute-show",
+                     "Wismar",
+                     "Die Anstalt",
+                     "Frontal 21",
+                     "Magazin Royale",
+                     "History"]
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
                                      ["Bibi und Tina", "TVSendungen_Kinder/Bibi_und_Tina"],
                                      ["Die Biene Maja", "TVSendungen_Kinder/Biene_Maja"],
@@ -101,6 +108,25 @@ for filename_origin in get_files(dir_downloads,filetype):
     
     # show what you have done...
     print(filename)
+    
+    # check if it contains a "jo" searchstring
+    is_jo = False
+    for searchstring in search_strings_jo:
+        if searchstring in filename:
+            print("Schiebe es zu Jo aufgrund: {}")
+            target_foder = dir_jo + "/"
+            target_filepath = dir_jo + "/" + filename
+            is_jo = True
+            break
+    if is_jo:
+        # rename the file
+        source_filepath_renamed = dir_downloads + "/" + filename
+        if source_filepath_renamed != source_filepath:
+            os.rename(source_filepath,source_filepath_renamed)
+        
+        mv_command = "mv " + source_filepath_renamed.replace(" ", "\\ ").replace("(", "\\(").replace(")", "\\)") + " " + target_foder + " 2>/dev/null"
+        check_output(mv_command,shell=True)
+        continue
     
     # check if it contains a searchstring - so it would get a special target folder
     for searchstring in search_strings_and_target_folders:
