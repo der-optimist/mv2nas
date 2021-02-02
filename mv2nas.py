@@ -6,7 +6,7 @@ dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
 dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
 path_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
-dir_jo = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
+dir_jo = '/srv/dev-disk-by-label-ssddata/ssddata/jo'
 search_strings_jo = ["heute-show",
                      "Wismar",
                      "Die Anstalt",
