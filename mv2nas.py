@@ -18,6 +18,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Die Biene Maja", "TVSendungen_Kinder/Biene_Maja"],
                                      ["Die Sendung mit der Maus", "TVSendungen_Kinder/Die_Maus"],
                                      ["Löwenzähnchen", "TVSendungen_Kinder/Löwenzähnchen"],
+                                     ["Löwenzahn", "TVSendungen_Kinder/Löwenzahn"],
                                      ["Meine Freundin Conni", "TVSendungen_Kinder/Conni"],
                                      ["Lieselotte", "TVSendungen_Kinder/Lieselotte"],
                                      ["Mia and me", "TVSendungen_Kinder/Mia_and_me"],
