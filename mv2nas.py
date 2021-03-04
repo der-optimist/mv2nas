@@ -58,6 +58,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Krimis im Ersten - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
                                      ["Die Heiland - Wir sind Anwalt", "TVSendungen/45_-_Die_Heiland"],
                                      ["Kanzlei Berger", "TVSendungen/45_-_Kanzlei_Berger"],
+                                     ["Unbroken", "TVSendungen/45_-_Unbroken"],
                                      ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
                                      ["Arctic Circle - Der unsichtbare Tod", "TVSendungen/45_-_Arctic_Circle_-_Der_unsichtbare_Tod"],
                                      ["Bodyguard", "TVSendungen/110_-_Bodyguard"],
