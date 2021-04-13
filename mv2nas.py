@@ -60,6 +60,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Filme - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
                                      ["Film im rbb - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
                                      ["Krimis im Ersten - Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
+                                     ["Nord bei Nordwest", "TVSendungen/90_-_Nord_bei_Nordwest"],
                                      ["Die Heiland - Wir sind Anwalt", "TVSendungen/45_-_Die_Heiland"],
                                      ["Kanzlei Berger", "TVSendungen/45_-_Kanzlei_Berger"],
                                      ["Unbroken", "TVSendungen/45_-_Unbroken"],
