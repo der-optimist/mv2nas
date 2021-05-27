@@ -21,6 +21,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Löwenzahn", "TVSendungen_Kinder/Löwenzahn"],
                                      ["Meine Freundin Conni", "TVSendungen_Kinder/Conni"],
                                      ["Lieselotte", "TVSendungen_Kinder/Lieselotte"],
+                                     ["Lassie", "TVSendungen_Kinder/Lassie"],
                                      ["Mia and me", "TVSendungen_Kinder/Mia_and_me"],
                                      ["Mascha und der Bär", "TVSendungen_Kinder/Mascha_und_der_Bär"],
                                      ["Mama Fuchs und Papa Dachs", "TVSendungen_Kinder/Mama_Fuchs_und_Papa_Dachs"],
