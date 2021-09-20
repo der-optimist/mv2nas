@@ -69,6 +69,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Krimis im Ersten - Der Masuren-Krimi", "TVSendungen/90_-_KiE_Masuren-Krimi"],
                                      ["Krimis im Ersten - Der Lissabon-Krimi", "TVSendungen/90_-_KiE_Lissabon-Krimi"],
                                      ["Krimis im Ersten - Der Amsterdam-Krimi", "TVSendungen/90_-_KiE_Amsterdam-Krimi"],
+                                     ["Krimis im Ersten*Der Usedom-Krimi", "TVSendungen/90_-_KiE_Usedom-Krimi"],
                                      ["Krimis im Ersten - Wolfsland", "TVSendungen/90_-_KiE_Wolfsland"],
                                      ["Krimis im Ersten - Kommissar Dupin", "TVSendungen/90_-_KiE_Kommissar_Dupin"],
                                      ["Krimis im Ersten - Der Zürich-Krimi", "TVSendungen/90_-_KiE_Zürich-Krimi"],
