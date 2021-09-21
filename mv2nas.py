@@ -33,6 +33,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Unser Sandmännchen", "TVSendungen_Kinder"],
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
+                                     ["Paula und die wilden Tiere", "TVSendungen_Kinder/Paula_und_die_wilden_Tiere"],
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
                                      ["Giraffe Erdmännchen und Co", "TVSendungen_Kinder/Erdmännchen_Giraffe_und_Co"],
                                      ["Arne Dahl", "TVSendungen/110_-_Arne_Dahl"],
