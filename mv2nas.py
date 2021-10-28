@@ -2,9 +2,9 @@ import os
 from subprocess import check_output
 
 # Input
-dir_downloads = '/srv/dev-disk-by-label-ssddata/ssddata/downloads'
-dir_nas_media = '/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
-path_tvu_script = '/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/tvupdate.sh'
+dir_downloads = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/downloads'
+dir_nas_media = '/srv/557832cf-e69b-43d9-a5da-a7051df9b990' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
+path_tvu_script = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
 dir_jo = '/srv/dev-disk-by-label-ssddata/ssddata/jo'
 search_strings_jo = ["heute-show",
