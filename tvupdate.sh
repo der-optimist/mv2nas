@@ -4,9 +4,9 @@
 #
 # --- Input ---
 #
-dir_website_temp='/srv/dev-disk-by-label-ssddata/ssddata/omv_scripts/tv/website'
-dir_website_online='/srv/dev-disk-by-label-ssddata/www/tvsendungen'
-dir_nas_media='/srv/eaec4d04-9e72-4736-a72b-57d16e5b71b5'
+dir_website_temp='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/website'
+dir_website_online='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/www/tvsendungen'
+dir_nas_media='/srv/557832cf-e69b-43d9-a5da-a7051df9b990'
 user_group_website='nobody.users'
 simplepush_id='123abc'
 #
