@@ -2,7 +2,7 @@
 # create a small website of downloaded video files incl. link
 # to directly start them in kodi
 #
-# --- Input --- 
+# --- Input --- updated
 #
 dir_website_temp='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/website'
 dir_website_online='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/www/tvsendungen'
