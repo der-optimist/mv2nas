@@ -15,6 +15,9 @@ simplepush_id=$(cat "$simplepush_id_file")
 #
 # tvu Eltern
 saved_durations_file=${dir_website_temp}/saved_durations_eltern.txt
+if [ ! -e "$saved_durations_file" ] ; then
+    touch "$saved_durations_file"
+fi
 saved_durations_file_old=${dir_website_temp}/saved_durations_eltern_old.txt
 mv ${saved_durations_file} ${saved_durations_file_old}
 echo 'saved durations in minutes' > ${saved_durations_file}
@@ -150,6 +153,9 @@ rm ${saved_durations_file_old}
 # -------------------
 # tvu Kinder
 saved_durations_file=${dir_website_temp}/saved_durations_kinder.txt
+if [ ! -e "$saved_durations_file" ] ; then
+    touch "$saved_durations_file"
+fi
 saved_durations_file_old=${dir_website_temp}/saved_durations_kinder_old.txt
 mv ${saved_durations_file} ${saved_durations_file_old}
 echo 'saved durations in minutes' > ${saved_durations_file}
