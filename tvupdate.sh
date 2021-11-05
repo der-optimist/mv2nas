@@ -8,11 +8,17 @@ dir_website_temp='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssd
 dir_website_online='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/www/tvsendungen'
 dir_nas_media='/srv/557832cf-e69b-43d9-a5da-a7051df9b990'
 user_group_website='nobody.users'
-simplepush_id='123abc'
+simplepush_id_file='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/simplepush-id.txt'
+simplepush_id=$(cat "$simplepush_id_file")
 #
 # -------------
 #
 # tvu Eltern
+saved_durations_file=${dir_website_temp}/saved_durations_eltern.txt
+saved_durations_file_old=${dir_website_temp}/saved_durations_eltern_old.txt
+mv ${saved_durations_file} ${saved_durations_file_old}
+echo 'saved durations in minutes' > ${saved_durations_file}
+#
 mv ${dir_website_temp}/tvvorschau ${dir_website_temp}/tvvorschaualt
 mkdir ${dir_website_temp}/tvvorschau
 echo '--- Schreibe TV-Sendungen in html-Datei ---'
@@ -41,9 +47,15 @@ echo '<!doctype html>
 for datei in *
 do
 if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-  sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
-  sekint=${sek%.*}
-  min=$(( $sekint /60 ))
+  min_saved=$(grep "${datei}" "${saved_durations_file_old}" | tail -1 | cut -d: -f2)
+  if [ -n "$min_saved" ] && [ "$min_saved" -eq "$min_saved" ] 2>/dev/null; then
+    min=$min_saved
+  else
+    sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
+    sekint=${sek%.*}
+    min=$(( $sekint /60 ))
+  fi
+  echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
   echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
@@ -85,9 +97,15 @@ if test -d "${verzeichnis}"; then
   for datei in *
   do
   if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-    sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
-    sekint=${sek%.*}
-    min=$(( $sekint /60 ))
+    min_saved=$(grep "${datei}" "${saved_durations_file_old}" | tail -1 | cut -d: -f2)
+    if [ -n "$min_saved" ] && [ "$min_saved" -eq "$min_saved" ] 2>/dev/null; then
+      min=$min_saved
+    else
+      sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
+      sekint=${sek%.*}
+      min=$(( $sekint /60 ))
+    fi
+    echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
     echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
@@ -128,8 +146,14 @@ echo '    </nobr>
 </html>' >> ${dir_website_temp}/index.html
 #
 rm -r ${dir_website_temp}/tvvorschaualt
+rm ${saved_durations_file_old}
 # -------------------
 # tvu Kinder
+saved_durations_file=${dir_website_temp}/saved_durations_kinder.txt
+saved_durations_file_old=${dir_website_temp}/saved_durations_kinder_old.txt
+mv ${saved_durations_file} ${saved_durations_file_old}
+echo 'saved durations in minutes' > ${saved_durations_file}
+#
 mv ${dir_website_temp}/tvvorschaukinder ${dir_website_temp}/tvvorschaukinderalt
 mkdir ${dir_website_temp}/tvvorschaukinder
 echo '--- Schreibe TV-Sendungen in html-Datei ---'
@@ -156,9 +180,15 @@ echo '<!doctype html>
 for datei in *
 do
 if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-  sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
-  sekint=${sek%.*}
-  min=$(( $sekint /60 ))
+  min_saved=$(grep "${datei}" "${saved_durations_file_old}" | tail -1 | cut -d: -f2)
+  if [ -n "$min_saved" ] && [ "$min_saved" -eq "$min_saved" ] 2>/dev/null; then
+    min=$min_saved
+  else
+    sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
+    sekint=${sek%.*}
+    min=$(( $sekint /60 ))
+  fi
+  echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
   echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
@@ -200,9 +230,15 @@ if test -d "${verzeichnis}"; then
   for datei in *
   do
   if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-    sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
-    sekint=${sek%.*}
-    min=$(( $sekint /60 ))
+    min_saved=$(grep "${datei}" "${saved_durations_file_old}" | tail -1 | cut -d: -f2)
+    if [ -n "$min_saved" ] && [ "$min_saved" -eq "$min_saved" ] 2>/dev/null; then
+      min=$min_saved
+    else
+      sek=$(ffprobe -show_format "${datei}" | sed -n '/duration/s/.*=//p')
+      sekint=${sek%.*}
+      min=$(( $sekint /60 ))
+    fi
+    echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
     echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
@@ -243,6 +279,7 @@ echo '    </nobr>
 </html>' >> ${dir_website_temp}/indexkinder.html
 #
 rm -r ${dir_website_temp}/tvvorschaukinderalt
+rm ${saved_durations_file_old}
 # ------------------
 # Stell die Liste der TVSendungen online
 echo '--- Stelle TV-Sendungen online ---'
@@ -260,9 +297,9 @@ sleep 2
 # melde den Plattenplatz aufs Handy
 echo '--- Melde Plattenplatz aufs Handy ---'
 msg1=$(df -h | awk '{if (match($1,/(Intenso)/)) {print "Kodi " $4}}')
-msg2=$(df -h | awk '{if (match($1,/(sda1)/)) {print "HDD6T " $4}}')
-msg3=$(df -h | awk '{if (match($1,/(sdb1)/)) {print "SSD-Sys " $4}}')
-msg4=$(df -h | awk '{if (match($1,/(sdb2)/)) {print "SSD-Dat " $4}}')
+msg2=$(df -h | awk '{if (match($1,/(sdb1)/)) {print "HDD6T " $4}}')
+msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
+msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD " $4}}')
 msg=$(echo "$msg1 - $msg2 - $msg3 - $msg4") && curl "https://api.simplepush.io/send/${simplepush_id}/fertig/$msg" 
 #
 echo '--- Fertig ---'
