@@ -24,7 +24,7 @@ echo 'saved durations in minutes' > ${saved_durations_file}
 #
 mv ${dir_website_temp}/tvvorschau ${dir_website_temp}/tvvorschaualt
 mkdir ${dir_website_temp}/tvvorschau
-echo '--- Schreibe TV-Sendungen in html-Datei ---'
+echo '--- Schreibe TV-Sendungen Eltern in html-Datei ---'
 set -e
 cd ${dir_nas_media}/TVSendungen
 set +e
@@ -162,7 +162,7 @@ echo 'saved durations in minutes' > ${saved_durations_file}
 #
 mv ${dir_website_temp}/tvvorschaukinder ${dir_website_temp}/tvvorschaukinderalt
 mkdir ${dir_website_temp}/tvvorschaukinder
-echo '--- Schreibe TV-Sendungen in html-Datei ---'
+echo '--- Schreibe TV-Sendungen Kinder in html-Datei ---'
 cd ${dir_nas_media}/TVSendungen_Kinder
 echo '<!doctype html>
 <html>
