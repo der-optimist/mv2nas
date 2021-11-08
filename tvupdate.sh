@@ -31,7 +31,7 @@ then
     exit
 fi
 #
-if ! test -f "$simplepush_id_file"; then
+if [ ! -f "$simplepush_id_file" ]; then
     echo "simplepush_id_file does not exist. Push Notification will not work."
     sleep 10
 fi
