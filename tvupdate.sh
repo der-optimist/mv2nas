@@ -31,6 +31,10 @@ then
     exit
 fi
 #
+if ! test -f "$simplepush_id_file"; then
+    echo "simplepush_id_file does not exist. Push Notification will not work."
+fi
+#
 # ------------
 # tvu Eltern
 saved_durations_file=${dir_website_temp}/saved_durations_eltern.txt
@@ -43,6 +47,7 @@ echo 'saved durations in minutes' > ${saved_durations_file}
 #
 mv ${dir_website_temp}/tvvorschau ${dir_website_temp}/tvvorschaualt
 mkdir ${dir_website_temp}/tvvorschau
+echo ' '
 echo '--- Schreibe TV-Sendungen Eltern in html-Datei ---'
 echo ' '
 echo "Eltern - Hauptordner"
@@ -335,5 +340,6 @@ msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
 msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD " $4}}')
 msg=$(echo "$msg1 - $msg2 - $msg3 - $msg4") && curl "https://api.simplepush.io/send/${simplepush_id}/fertig/$msg" 
 #
+echo ' '
 echo '--- Fertig ---'
 date
