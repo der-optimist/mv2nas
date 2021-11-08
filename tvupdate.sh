@@ -2,7 +2,7 @@
 # create a small website of downloaded video files incl. link
 # to directly start them in kodi
 #
-# --- Input --- updated
+# --- Input --- 
 #
 dir_website_temp='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/website'
 dir_website_online='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/www/tvsendungen'
@@ -12,7 +12,26 @@ simplepush_id_file='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/s
 simplepush_id=$(cat "$simplepush_id_file")
 #
 # -------------
+# check required tools
+if ! command -v ffprobe &> /dev/null
+then
+    echo "ffprobe could not be found. Will exit now"
+    exit
+fi
 #
+if ! command -v ffmpegthumbnailer &> /dev/null
+then
+    echo "ffmpegthumbnailer could not be found. Will exit now"
+    exit
+fi
+#
+if ! command -v montage &> /dev/null
+then
+    echo "montage could not be found. Will exit now"
+    exit
+fi
+#
+# ------------
 # tvu Eltern
 saved_durations_file=${dir_website_temp}/saved_durations_eltern.txt
 if [ ! -e "$saved_durations_file" ] ; then
@@ -25,6 +44,8 @@ echo 'saved durations in minutes' > ${saved_durations_file}
 mv ${dir_website_temp}/tvvorschau ${dir_website_temp}/tvvorschaualt
 mkdir ${dir_website_temp}/tvvorschau
 echo '--- Schreibe TV-Sendungen Eltern in html-Datei ---'
+echo ' '
+echo "Eltern - Hauptordner"
 set -e
 cd ${dir_nas_media}/TVSendungen
 set +e
@@ -93,6 +114,7 @@ echo '    </ul><br>' >> ${dir_website_temp}/index.html
 for verzeichnis in *
 do
 if test -d "${verzeichnis}"; then
+  echo "Eltern - ${verzeichnis}"
   cd "${verzeichnis}"
   echo "${verzeichnis}" | tr _ " " | awk '{print "    <h1>" $0 "</h1>"}'>> ${dir_website_temp}/index.html
   echo '    <ul>' >> ${dir_website_temp}/index.html
@@ -162,7 +184,11 @@ echo 'saved durations in minutes' > ${saved_durations_file}
 #
 mv ${dir_website_temp}/tvvorschaukinder ${dir_website_temp}/tvvorschaukinderalt
 mkdir ${dir_website_temp}/tvvorschaukinder
+echo ' '
+echo ' '
 echo '--- Schreibe TV-Sendungen Kinder in html-Datei ---'
+echo ' '
+echo "Kinder - Hauptordner"
 cd ${dir_nas_media}/TVSendungen_Kinder
 echo '<!doctype html>
 <html>
@@ -229,6 +255,7 @@ echo '    </ul><br>' >> ${dir_website_temp}/indexkinder.html
 for verzeichnis in *
 do
 if test -d "${verzeichnis}"; then
+  echo "Kinder - ${verzeichnis}"
   cd "${verzeichnis}"
   echo "${verzeichnis}" | tr _ " " | awk '{print "    <h1>" $0 "</h1>"}'>> ${dir_website_temp}/indexkinder.html
   echo '    <ul>' >> ${dir_website_temp}/indexkinder.html
@@ -288,7 +315,7 @@ rm -r ${dir_website_temp}/tvvorschaukinderalt
 rm ${saved_durations_file_old}
 # ------------------
 # Stell die Liste der TVSendungen online
-echo '--- Stelle TV-Sendungen online ---'
+echo '--- Kopiere die TV-Sendungen-Seite auf den Webserver ---'
 cd ${dir_website_temp}
 cp index.html ${dir_website_online}/index.html
 cp indexkinder.html ${dir_website_online}/kinder/index.html
@@ -298,7 +325,7 @@ rm ${dir_website_online}/kinder/tvvorschaukinder/*
 cp tvvorschaukinder/* ${dir_website_online}/kinder/tvvorschaukinder/
 chown -R ${user_group_website} ${dir_website_online}
 chmod -R 755 ${dir_website_online}
-sleep 2
+sleep 1
 #
 # melde den Plattenplatz aufs Handy
 echo '--- Melde Plattenplatz aufs Handy ---'
