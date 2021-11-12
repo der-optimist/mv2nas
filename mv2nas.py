@@ -2,7 +2,7 @@ import os
 from subprocess import check_output
 
 # Input
-dir_downloads = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/downloads'
+dir_downloads = '/srv/dev-disk-by-id-ata-ST6000DM003-2CY186_WF208FWA-part1/hdddata/downloads'
 dir_nas_media = '/srv/557832cf-e69b-43d9-a5da-a7051df9b990' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
 path_tvu_script = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
@@ -39,6 +39,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Anna, Pia und die Haustiere", "TVSendungen_Kinder/Anna_Pia_und_die_Haustiere"],
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
                                      ["Giraffe Erdmännchen und Co", "TVSendungen_Kinder/Erdmännchen_Giraffe_und_Co"],
+                                     ["Elefant, Tiger & Co", "TVSendungen_Kinder/Zoo_Leipzig"],
                                      ["Arne Dahl", "TVSendungen/110_-_Arne_Dahl"],
                                      ["Der Pass", "TVSendungen/50_-_Der_Pass"],
                                      ["Der Alte", "TVSendungen/60_-_Der_Alte"],
@@ -104,6 +105,24 @@ def get_files(folder, filetype):
             list_filenames.append(file)
     return list_filenames
 
+def clean_filename(filename):
+    # replace special chars in file name
+    filename = filename.replace("&","und")
+    filename = filename.replace(";","")
+    filename = filename.replace(":","")
+    filename = filename.replace(",","")
+    filename = filename.replace("–","-")
+    filename = filename.replace("<", "")
+    filename = filename.replace(">", "")
+    filename = filename.replace("!", "")
+    filename = filename.replace("?", "")
+    filename = filename.replace("*", "")
+    filename = filename.replace("[", "(")
+    filename = filename.replace("]", ")")
+    filename = filename.replace("{", "(")
+    filename = filename.replace("}", ")")
+    return filename
+  
 for filename_origin in get_files(dir_downloads,filetype):
     source_filepath = dir_downloads + "/" + filename_origin
     filename = filename_origin
@@ -125,20 +144,7 @@ for filename_origin in get_files(dir_downloads,filetype):
         pass
     
     # replace special chars in file name
-    filename = filename.replace("&","und")
-    filename = filename.replace(";","")
-    filename = filename.replace(":","")
-    filename = filename.replace(",","")
-    filename = filename.replace("–","-")
-    filename = filename.replace("<", "")
-    filename = filename.replace(">", "")
-    filename = filename.replace("!", "")
-    filename = filename.replace("?", "")
-    filename = filename.replace("*", "")
-    filename = filename.replace("[", "(")
-    filename = filename.replace("]", ")")
-    filename = filename.replace("{", "(")
-    filename = filename.replace("}", ")")
+    filename = clean_filename(filename)
     
     # show what you have done...
     print(filename)
@@ -146,7 +152,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     # check if it contains a "jo" searchstring
     is_jo = False
     for searchstring in search_strings_jo:
-        if searchstring in filename:
+        if clean_filename(searchstring) in filename:
             print("Schiebe es zu Jo aufgrund: {}")
             target_foder = dir_jo + "/"
             target_filepath = dir_jo + "/" + filename
@@ -164,7 +170,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     
     # check if it contains a searchstring - so it would get a special target folder
     for searchstring in search_strings_and_target_folders:
-        if (" - " + searchstring[0]) in filename:
+        if (" - " + clean_filename(searchstring[0])) in filename:
             # Cut out that part, as it is already part of the folder name.
             filename = filename.replace((" - " + searchstring[0]),"")
             print("Sortiere es ein unter: {}".format(searchstring[0]))
