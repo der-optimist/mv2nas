@@ -36,7 +36,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Paula und die wilden Tiere", "TVSendungen_Kinder/Paula_und_die_wilden_Tiere"],
                                      ["Paula und ihre wilde Welt", "TVSendungen_Kinder/Paula_und_ihre_wilde_Welt"],
                                      ["Anna, Pia, Paula und ihre wilde Welt", "TVSendungen_Kinder/Paula_und_ihre_wilde_Welt"],
-                                     ["Anna, Pia und die Haustiere", "TVSendungen_Kinder/Anna_Pia_und_die_Haustiere"],
+                                     ["Anna, Pia und die Haustiere", "TVSendungen_Kinder/Paula_und_die_Haustiere"],
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
                                      ["Giraffe Erdmännchen und Co", "TVSendungen_Kinder/Erdmännchen_Giraffe_und_Co"],
                                      ["Elefant, Tiger & Co", "TVSendungen_Kinder/Zoo_Leipzig"],
