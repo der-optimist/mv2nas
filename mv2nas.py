@@ -75,6 +75,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Krimis im Ersten - Der Masuren-Krimi", "TVSendungen/90_-_KiE_Masuren-Krimi"],
                                      ["Krimis im Ersten - Der Lissabon-Krimi", "TVSendungen/90_-_KiE_Lissabon-Krimi"],
                                      ["Krimis im Ersten - Der Amsterdam-Krimi", "TVSendungen/90_-_KiE_Amsterdam-Krimi"],
+                                     ["Der Usedom-Krimi", "TVSendungen/90_-_KiE_Usedom-Krimi"],
                                      ["Usedom-Krimi", "TVSendungen/90_-_KiE_Usedom-Krimi"],
                                      ["Krimis im Ersten - Wolfsland", "TVSendungen/90_-_KiE_Wolfsland"],
                                      ["Krimis im Ersten - Kommissar Dupin", "TVSendungen/90_-_KiE_Kommissar_Dupin"],
@@ -93,6 +94,10 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Arctic Circle - Der unsichtbare Tod", "TVSendungen/45_-_Arctic_Circle_-_Der_unsichtbare_Tod"],
                                      ["Bodyguard", "TVSendungen/110_-_Bodyguard"],
                                      ["Tod von Freunden", "TVSendungen/60_-_Tod_von_Freunden"],
+                                     ["Der Überläufer", "TVSendungen/45_-_Der_Überläufer"],
+                                     ["Pure", "TVSendungen/30_-_Pure"],
+                                     ["BOX 21", "TVSendungen/45_-_BOX_21"],
+                                     ["Furia", "TVSendungen/45_-_Furia"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
