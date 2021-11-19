@@ -177,7 +177,7 @@ for filename_origin in get_files(dir_downloads,filetype):
     for searchstring in search_strings_and_target_folders:
         if (" - " + clean_filename(searchstring[0])) in filename:
             # Cut out that part, as it is already part of the folder name.
-            filename = filename.replace((" - " + searchstring[0]),"")
+            filename = filename.replace((" - " + clean_filename(searchstring[0])),"")
             print("Sortiere es ein unter: {}".format(searchstring[0]))
             target_foder = dir_nas_media + "/" + searchstring[1] + "/"
             target_filepath = dir_nas_media + "/" + searchstring[1] + "/" + filename
