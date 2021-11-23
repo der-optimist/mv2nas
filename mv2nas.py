@@ -99,6 +99,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["BOX 21", "TVSendungen/45_-_BOX_21"],
                                      ["Furia", "TVSendungen/45_-_Furia"],
                                      ["WESTWALL", "TVSendungen/45_-_Westwall"],
+                                     ["Alex Rider", "TVSendungen/40_-_Alex_Rider"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
