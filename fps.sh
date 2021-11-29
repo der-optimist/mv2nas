@@ -14,22 +14,6 @@ then
     exit
 fi
 #
-if ! command -v ffmpegthumbnailer &> /dev/null
-then
-    echo "ffmpegthumbnailer could not be found. Will exit now"
-    exit
-fi
-#
-if ! command -v montage &> /dev/null
-then
-    echo "montage could not be found. Will exit now"
-    exit
-fi
-#
-if [ ! -f "$simplepush_id_file" ]; then
-    echo "simplepush_id_file does not exist. Push Notification will not work."
-    sleep 10
-fi
 #
 # ------------
 # fps Eltern
@@ -47,6 +31,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
   echo "${datei}: ${fps}" >> ${path_fps}
 fi
+done
 
 #
 for verzeichnis in *
@@ -62,6 +47,9 @@ if test -d "${verzeichnis}"; then
     fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
+  done
+fi
+done
 # -------------------
 # fps Kinder
 
@@ -81,6 +69,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
   echo "${datei}: ${fps}" >> ${path_fps}
 fi
+done
 #
 for verzeichnis in *
 do
@@ -95,6 +84,9 @@ if test -d "${verzeichnis}"; then
     fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
+  done
+fi
+done
 # ------------------
 # Stell die Liste der TVSendungen online
 echo 'done'
