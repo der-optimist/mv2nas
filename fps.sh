@@ -28,7 +28,7 @@ echo 'Eltern Hauptordner
 for datei in *
 do
 if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-  fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
+  fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate,width,height "${datei}")
   echo "${datei}: ${fps}" >> ${path_fps}
 fi
 done
@@ -44,7 +44,7 @@ if test -d "${verzeichnis}"; then
   for datei in *
   do
   if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-    fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
+    fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate,width,height "${datei}")
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
   done
@@ -67,7 +67,7 @@ Kinder Hauptordner
 for datei in *
 do
 if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-  fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
+  fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate,width,height "${datei}")
   echo "${datei}: ${fps}" >> ${path_fps}
 fi
 done
@@ -82,7 +82,7 @@ if test -d "${verzeichnis}"; then
   for datei in *
   do
   if [[ $datei =~ .*\.(mp4|mkv) ]]; then
-    fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "${datei}")
+    fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate,width,height "${datei}")
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
   done
