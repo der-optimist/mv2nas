@@ -48,6 +48,7 @@ if test -d "${verzeichnis}"; then
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
   done
+  cd ..
 fi
 done
 # -------------------
@@ -61,7 +62,7 @@ cd ${dir_nas_media}/TVSendungen_Kinder
 echo '
 
 Kinder Hauptordner
-' > ${path_fps}
+' >> ${path_fps}
 #
 for datei in *
 do
@@ -85,6 +86,7 @@ if test -d "${verzeichnis}"; then
     echo "${datei}: ${fps}" >> ${path_fps}
   fi
   done
+  cd ..
 fi
 done
 # ------------------
