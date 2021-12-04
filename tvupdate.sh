@@ -6,7 +6,7 @@
 #
 dir_website_temp='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/website'
 dir_website_online='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/www/tvsendungen'
-dir_nas_media='/srv/557832cf-e69b-43d9-a5da-a7051df9b990'
+dir_nas_media='/srv/5fda0d53-e782-4f16-9775-20a361ff6e15'
 user_group_website='nobody.users'
 simplepush_id_file='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/simplepush-id.txt'
 simplepush_id=$(cat "$simplepush_id_file")
