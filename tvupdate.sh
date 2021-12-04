@@ -87,7 +87,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+  echo "    <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -138,7 +138,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+    echo "      <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -228,7 +228,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+  echo "    <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
@@ -279,7 +279,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Intenso/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+    echo "      <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
@@ -335,7 +335,7 @@ sleep 1
 #
 # melde den Plattenplatz aufs Handy
 echo '--- Melde Plattenplatz aufs Handy ---'
-msg1=$(df -h | awk '{if (match($1,/(Intenso)/)) {print "Kodi " $4}}')
+msg1=$(df -h | awk '{if (match($1,/(Toshiba4T)/)) {print "Kodi " $4}}')
 msg2=$(df -h | awk '{if (match($1,/(sdb1)/)) {print "HDD6T " $4}}')
 msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
 msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD " $4}}')
