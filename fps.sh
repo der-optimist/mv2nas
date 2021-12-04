@@ -3,7 +3,7 @@
 #
 # --- Input --- 
 #
-dir_nas_media='/srv/557832cf-e69b-43d9-a5da-a7051df9b990'
+dir_nas_media='/srv/5fda0d53-e782-4f16-9775-20a361ff6e15'
 path_fps='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/fps.txt'
 #
 # -------------
