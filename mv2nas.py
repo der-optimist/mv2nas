@@ -3,7 +3,7 @@ from subprocess import check_output
 
 # Input
 dir_downloads = '/srv/dev-disk-by-id-ata-ST6000DM003-2CY186_WF208FWA-part1/hdddata/downloads'
-dir_nas_media = '/srv/557832cf-e69b-43d9-a5da-a7051df9b990' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
+dir_nas_media = '/srv/5fda0d53-e782-4f16-9775-20a361ff6e15' # remember: could also be user:pw@host without mounting as rsync is used below. should adapt rsync command then of course
 path_tvu_script = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/tvupdate.sh'
 filetype = '.mp4'
 dir_jo = '/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/jo'
