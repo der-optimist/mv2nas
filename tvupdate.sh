@@ -10,6 +10,8 @@ dir_nas_media='/srv/5fda0d53-e782-4f16-9775-20a361ff6e15'
 user_group_website='nobody.users'
 simplepush_id_file='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/simplepush-id.txt'
 simplepush_id=$(cat "$simplepush_id_file")
+ha_token_file='/srv/dev-disk-by-uuid-6416d6e7-a248-4554-9d15-d5643a6b8a67/ssddata/omv_scripts/tv/ha_token.txt'
+ha_token=$(cat "$ha_token_file")
 #
 # -------------
 # check required tools
@@ -29,6 +31,10 @@ if ! command -v montage &> /dev/null
 then
     echo "montage could not be found. Will exit now"
     exit
+fi
+#
+if [ ! -f "$ha_token_file" ]; then
+    echo "ha_token_file does not exist. Will exit now"
 fi
 #
 if [ ! -f "$simplepush_id_file" ]; then
@@ -70,9 +76,33 @@ echo '<!doctype html>
     </style>
   </head>
   <body>
+    <script language="javascript"> 
+
+    function PostToHA(filepath){
+      var url = "http://homeassistant.fritz.box:8123/api/events/play_on_kodi_wz";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+' > ${dir_website_temp}/index.html
+echo "      xhr.setRequestHeader(\"Authorization\", \"Bearer ${ha_token}\");" >> ${dir_website_temp}/index.html
+echo '      xhr.setRequestHeader("content-type", "application/json");
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+        }};
+
+      var data = `{
+        "filepath": ` + filepath + `
+      }`;
+
+      xhr.send(data);
+    }
+    </script>
     <nobr>
     <h1>Eltern-Hauptordner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kinder/index.html" style="color:darkorange;text-decoration:none;border-bottom: 1px solid darkorange;font-weight:bold;">=> Zu den Kindern</a>
-    <ul>' > ${dir_website_temp}/index.html
+    <ul>' >> ${dir_website_temp}/index.html
 #
 for datei in *
 do
@@ -87,7 +117,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -138,7 +168,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -211,9 +241,33 @@ echo '<!doctype html>
     </style>
   </head>
   <body>
+    <script language="javascript"> 
+
+    function PostToHA(filepath){
+      var url = "http://homeassistant.fritz.box:8123/api/events/play_on_kodi_wz";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+' > ${dir_website_temp}/indexkinder.html
+echo "      xhr.setRequestHeader(\"Authorization\", \"Bearer ${ha_token}\");" >> ${dir_website_temp}/indexkinder.html
+echo '      xhr.setRequestHeader("content-type", "application/json");
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+        }};
+
+      var data = `{
+        "filepath": ` + filepath + `
+      }`;
+
+      xhr.send(data);
+    }
+    </script>
     <nobr>
     <h1>Kinder-Hauptordner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html" style="color:darkorange;text-decoration:none;border-bottom: 1px solid darkorange;font-weight:bold;">=> Zu den Eltern</a>
-    <ul>' > ${dir_website_temp}/indexkinder.html
+    <ul>' >> ${dir_website_temp}/indexkinder.html
 #
 for datei in *
 do
@@ -228,7 +282,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
@@ -279,7 +333,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='http://kodi-wz-2:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"/var/media/Toshiba4T/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
