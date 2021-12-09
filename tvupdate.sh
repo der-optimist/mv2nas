@@ -94,7 +94,7 @@ echo '      xhr.setRequestHeader("content-type", "application/json");
         }};
 
       var data = `{
-        "filepath": ` + filepath + `
+        "filepath": "` + filepath + `"
       }`;
 
       xhr.send(data);
@@ -117,7 +117,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${datei}\")'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -168,7 +168,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
+    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen/${verzeichnis}/${datei}\")'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschau/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/index.html
   if test -e ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.jpg ${dir_website_temp}/tvvorschau/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaualt/${vorschau}.html ${dir_website_temp}/tvvorschau/${vorschau}.html
@@ -259,7 +259,7 @@ echo '      xhr.setRequestHeader("content-type", "application/json");
         }};
 
       var data = `{
-        "filepath": ` + filepath + `
+        "filepath": "` + filepath + `"
       }`;
 
       xhr.send(data);
@@ -282,7 +282,7 @@ if [[ $datei =~ .*\.(mp4|mkv) ]]; then
   fi
   echo "${datei}:${min}" >> ${saved_durations_file}
   vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+  echo "    <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${datei}\")'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
@@ -333,7 +333,7 @@ if test -d "${verzeichnis}"; then
     fi
     echo "${datei}:${min}" >> ${saved_durations_file}
     vorschau=$(echo ${datei%.*} | tr -cd '[:alnum:]')
-    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${verzeichnis}/${datei}\"}}}'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
+    echo "      <li><a href='javascript:PostToHA(\"/var/media/Toshiba4T/TVSendungen_Kinder/${verzeichnis}/${datei}\")'><b>${datei%.*}</b></a>&nbsp;&nbsp;<span style=\"color:red\">(${min})</span>&nbsp;&nbsp;(<a href=\"tvvorschaukinder/${vorschau}.html\">Vorschau</a>)</li>" >> ${dir_website_temp}/indexkinder.html
   if test -e ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg; then
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.jpg ${dir_website_temp}/tvvorschaukinder/${vorschau}.jpg
     mv ${dir_website_temp}/tvvorschaukinderalt/${vorschau}.html ${dir_website_temp}/tvvorschaukinder/${vorschau}.html
