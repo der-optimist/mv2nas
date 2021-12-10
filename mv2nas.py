@@ -40,6 +40,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Leopard Seebär und Co", "TVSendungen_Kinder/Leopard_Seebär_und_Co"],
                                      ["Giraffe Erdmännchen und Co", "TVSendungen_Kinder/Erdmännchen_Giraffe_und_Co"],
                                      ["Elefant, Tiger & Co", "TVSendungen_Kinder/Zoo_Leipzig"],
+                                     ["Welt unter Strom", "TVSendungen_Kinder/Welt_unter_Strom"],
                                      ["Arne Dahl", "TVSendungen/110_-_Arne_Dahl"],
                                      ["Der Pass", "TVSendungen/50_-_Der_Pass"],
                                      ["Der Alte", "TVSendungen/60_-_Der_Alte"],
@@ -100,6 +101,9 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Furia", "TVSendungen/45_-_Furia"],
                                      ["WESTWALL", "TVSendungen/45_-_Westwall"],
                                      ["Alex Rider", "TVSendungen/40_-_Alex_Rider"],
+                                     ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_Occupied_-_Die_Besatzung"],
+                                     ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
+                                     ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
