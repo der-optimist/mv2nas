@@ -103,7 +103,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Alex Rider", "TVSendungen/40_-_Alex_Rider"],
                                      ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_Occupied_-_Die_Besatzung"],
                                      ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
-                                     ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan"],
+                                     ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan_-_Krimikomödie"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
