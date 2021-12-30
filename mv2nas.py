@@ -105,6 +105,8 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
                                      ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan_-_Krimikomödie"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
+                                     ["Hamilton - Undercover in Stockholm", "TVSendungen/45_-_Hamilton_-_Undercover_in_Stockholm"],
+                                     ["Mord in der Familie - Der Zauberwürfel", "TVSendungen/45_-_Mord_in_der_Familie_-_Der_Zauberwürfel"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
