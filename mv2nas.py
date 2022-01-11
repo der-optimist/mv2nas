@@ -34,6 +34,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Dschungelbuch", "TVSendungen_Kinder"],
                                      ["JoNaLu", "TVSendungen_Kinder"],
                                      ["Paula und die wilden Tiere", "TVSendungen_Kinder/Paula_und_die_wilden_Tiere"],
+                                     ["Anna, Paula, Pia und die wilden Tiere _ wilde Natur", "TVSendungen_Kinder/Paula_und_die_wilden_Tiere_-_Kurze"],
                                      ["Paula und ihre wilde Welt", "TVSendungen_Kinder/Paula_und_ihre_wilde_Welt"],
                                      ["Anna, Pia, Paula und ihre wilde Welt", "TVSendungen_Kinder/Paula_und_ihre_wilde_Welt"],
                                      ["Anna, Pia und die Haustiere", "TVSendungen_Kinder/Paula_und_die_Haustiere"],
