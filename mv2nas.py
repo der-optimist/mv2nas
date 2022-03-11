@@ -110,6 +110,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Mord in der Familie - Der Zauberwürfel", "TVSendungen/45_-_Mord_in_der_Familie_-_Der_Zauberwürfel"],
                                      ["Schneller als die Angst", "TVSendungen/45_-_Schneller_als_die_Angst"],
                                      ["The Bay", "TVSendungen/45_-_The_Bay"],
+                                     ["They Were Ten", "TVSendungen/45_-_They_Were_Ten"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
