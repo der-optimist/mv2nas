@@ -95,6 +95,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Camilla Läckberg - Camilla Läckberg_ Mord in Fjällbacka", "TVSendungen/90_-_Camilla_Läckberg"],
                                      ["Arctic Circle - Der unsichtbare Tod", "TVSendungen/45_-_Arctic_Circle_-_Der_unsichtbare_Tod"],
                                      ["Bodyguard", "TVSendungen/110_-_Bodyguard"],
+                                     ["Spielfilm-Highlights", "TVSendungen/90_-_Spielfilm-Highlights"],
                                      ["Tod von Freunden", "TVSendungen/60_-_Tod_von_Freunden"],
                                      ["Der Überläufer", "TVSendungen/45_-_Der_Überläufer"],
                                      ["Pure", "TVSendungen/30_-_Pure"],
