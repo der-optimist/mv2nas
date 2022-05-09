@@ -112,6 +112,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Schneller als die Angst", "TVSendungen/45_-_Schneller_als_die_Angst"],
                                      ["The Bay", "TVSendungen/45_-_The_Bay"],
                                      ["They Were Ten", "TVSendungen/45_-_They_Were_Ten"],
+                                     ["Schwarzer Schatten - Serienmord im Krankenhaus", "TVSendungen/50_-_Schwarzer_Schatten_-_Serienmord_im_Krankenhaus"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
