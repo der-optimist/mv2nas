@@ -102,6 +102,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["BOX 21", "TVSendungen/45_-_BOX_21"],
                                      ["Furia", "TVSendungen/45_-_Furia"],
                                      ["WESTWALL", "TVSendungen/45_-_Westwall"],
+                                     ["The Killing", "TVSendungen/60_-_The_Killing"],
                                      ["Alex Rider", "TVSendungen/40_-_Alex_Rider"],
                                      ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_Occupied_-_Die_Besatzung"],
                                      ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
