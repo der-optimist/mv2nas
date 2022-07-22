@@ -15,6 +15,7 @@ search_strings_jo = ["heute-show",
                      "History"]
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
                                      ["Bibi und Tina", "TVSendungen_Kinder/Bibi_und_Tina"],
+                                     ["Checker Tobi", "TVSendungen_Kinder/Checker_Tobi"],
                                      ["Die Biene Maja", "TVSendungen_Kinder/Biene_Maja"],
                                      ["Die Sendung mit der Maus", "TVSendungen_Kinder/Die_Maus"],
                                      ["Löwenzähnchen", "TVSendungen_Kinder/Löwenzähnchen"],
