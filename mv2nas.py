@@ -108,6 +108,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_Occupied_-_Die_Besatzung"],
                                      ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
                                      ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan_-_Krimikomödie"],
+                                     ["Fernsehfilme und Serien - Serien - Die Toten von Turin", "TVSendungen/50_Die_Toten_von_Turin"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
                                      ["Hamilton - Undercover in Stockholm", "TVSendungen/45_-_Hamilton_-_Undercover_in_Stockholm"],
                                      ["Mord in der Familie - Der Zauberwürfel", "TVSendungen/45_-_Mord_in_der_Familie_-_Der_Zauberwürfel"],
