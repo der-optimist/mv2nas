@@ -118,6 +118,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Die Pembrokeshire Morde", "TVSendungen/45_-_Die_Pembrokeshire_Morde"],
                                      ["Lauchhammer - Tod in der Lausitz", "TVSendungen/45_-_Lauchhammer_-_Tod_in_der_Lausitz"],
                                      ["Schwarzer Schatten - Serienmord im Krankenhaus", "TVSendungen/50_-_Schwarzer_Schatten_-_Serienmord_im_Krankenhaus"],
+                                     ["SON - Der vermisste Passagier", "TVSendungen/30_-_SON_-_Der_vermisste_Passagier"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
