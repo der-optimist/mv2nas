@@ -15,7 +15,7 @@ search_strings_jo = ["heute-show",
                      "History"]
 search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bibi_Blocksberg"],
                                      ["Bibi und Tina", "TVSendungen_Kinder/Bibi_und_Tina"],
-                                     ["Checker Tobi", "TVSendungen_Kinder/Checker_Tobi"],
+                                     ["Checker", "TVSendungen_Kinder/Checker_Tobi"],
                                      ["Die Biene Maja", "TVSendungen_Kinder/Biene_Maja"],
                                      ["Die Sendung mit der Maus", "TVSendungen_Kinder/Die_Maus"],
                                      ["Löwenzähnchen", "TVSendungen_Kinder/Löwenzähnchen"],
@@ -119,6 +119,8 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Lauchhammer - Tod in der Lausitz", "TVSendungen/45_-_Lauchhammer_-_Tod_in_der_Lausitz"],
                                      ["Schwarzer Schatten - Serienmord im Krankenhaus", "TVSendungen/50_-_Schwarzer_Schatten_-_Serienmord_im_Krankenhaus"],
                                      ["SON - Der vermisste Passagier", "TVSendungen/30_-_SON_-_Der_vermisste_Passagier"],
+                                     ["Helsinki-Syndrom", "TVSendungen/50_-_Helsinki-Syndrom"],
+                                     ["Laim und", "TVSendungen/90_-_Laim"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
