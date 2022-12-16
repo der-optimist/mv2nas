@@ -105,10 +105,10 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["WESTWALL", "TVSendungen/45_-_Westwall"],
                                      ["The Killing", "TVSendungen/60_-_The_Killing"],
                                      ["Alex Rider", "TVSendungen/40_-_Alex_Rider"],
-                                     ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_Occupied_-_Die_Besatzung"],
-                                     ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_Borgen_-_Gefährliche_Seilschaften"],
-                                     ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_Clan_-_Krimikomödie"],
-                                     ["Fernsehfilme und Serien - Serien - Die Toten von Turin", "TVSendungen/50_Die_Toten_von_Turin"],
+                                     ["Fernsehfilme und Serien - Serien - Occupied - Die Besatzung", "TVSendungen/45_-_Occupied_-_Die_Besatzung"],
+                                     ["Fernsehfilme und Serien - Serien - Borgen - Gefährliche Seilschaften", "TVSendungen/60_-_Borgen_-_Gefährliche_Seilschaften"],
+                                     ["Fernsehfilme und Serien - Serien - Clan", "TVSendungen/50_-_Clan_-_Krimikomödie"],
+                                     ["Fernsehfilme und Serien - Serien - Die Toten von Turin", "TVSendungen/50_-_Die_Toten_von_Turin"],
                                      ["Aus der Spur", "TVSendungen/50_-_Aus_der_Spur"],
                                      ["Hamilton - Undercover in Stockholm", "TVSendungen/45_-_Hamilton_-_Undercover_in_Stockholm"],
                                      ["Mord in der Familie - Der Zauberwürfel", "TVSendungen/45_-_Mord_in_der_Familie_-_Der_Zauberwürfel"],
@@ -121,6 +121,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["SON - Der vermisste Passagier", "TVSendungen/30_-_SON_-_Der_vermisste_Passagier"],
                                      ["Helsinki-Syndrom", "TVSendungen/50_-_Helsinki-Syndrom"],
                                      ["Laim und", "TVSendungen/90_-_Laim"],
+                                     ["Kommissar Wisting", "TVSendungen/45_-_Kommissar_Wisting"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
