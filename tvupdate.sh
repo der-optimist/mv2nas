@@ -389,11 +389,11 @@ sleep 1
 #
 # melde den Plattenplatz aufs Handy
 echo '--- Melde Plattenplatz aufs Handy ---'
-msg1=$(df -h | awk '{if (match($1,/(Toshiba4T)/)) {print "Kodi " $4}}')
-msg2=$(df -h | awk '{if (match($1,/(sdb1)/)) {print "HDD6T " $4}}')
-msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
-msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD " $4}}')
-msg=$(echo "$msg1 - $msg2 - $msg3 - $msg4")
+msg1=$(df -h | awk '{if (match($1,/(Toshiba4T)/)) {print "Kodi: " $4}}')
+msg2=$(df -h | awk '{if (match($1,/(sdb1)/)) {print "HDD6T: " $4}}')
+msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD: " $4}}')
+msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD: " $4}}')
+msg=$(echo " $msg1 \n $msg2\n$msg3\n$msg4")
 echo $msg
 curl -X POST -H "Authorization: Bearer ${ha_token}" -H "Content-Type: application/json" -d '{"msg":"'"$msg"'"}' http://homeassistant.fritz.box:8123/api/events/nas_plattenplatz
 #
