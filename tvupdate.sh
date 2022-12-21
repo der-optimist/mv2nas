@@ -395,7 +395,7 @@ msg3=$(df -h | awk '{if (match($1,/(sda1)/)) {print "SSD " $4}}')
 msg4=$(df -h | awk '{if (match($1,/(mmcblk1p1)/)) {print "SD " $4}}')
 msg=$(echo "$msg1 - $msg2 - $msg3 - $msg4")
 echo $msg
-curl -X POST -H "Authorization: Bearer ${ha_token}" -H "Content-Type: application/json" -d '{"message":${msg},}' http://localhost:8123/api/events/kodi_plattenplatz
+curl -X POST -H "Authorization: Bearer ${ha_token}" -H "Content-Type: application/json" -d '{"message":${msg},}' http://homeassistant.fritz.box:8123/api/events/kodi_plattenplatz
 #
 echo ' '
 echo '--- Fertig ---'
