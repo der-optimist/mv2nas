@@ -122,6 +122,7 @@ search_strings_and_target_folders = [["Bibi Blocksberg", "TVSendungen_Kinder/Bib
                                      ["Helsinki-Syndrom", "TVSendungen/50_-_Helsinki-Syndrom"],
                                      ["Laim und", "TVSendungen/90_-_Laim"],
                                      ["Kommissar Wisting", "TVSendungen/45_-_Kommissar_Wisting"],
+                                     ["Fernsehfilme und Serien - Serien - Lifjord – Der Freispruch", "TVSendungen/45_-_Lifjord_–_Der_Freispruch"],
                                      ["Schatten der Mörder - Shadowplay", "TVSendungen/60_-_Schatten_der_Mörder"]]
 
 # Code
